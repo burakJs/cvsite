@@ -14,6 +14,10 @@ function AddBlogs() {
     //const [datas,setDatas] = useState([]);
     var ref = firebase.database().ref('blogs');
 
+    function timeout(delay) {
+        return new Promise( res => setTimeout(res, delay) );
+    }
+
     const checkRow = (text) =>{
         setDetails(text);
         //console.log((Math.floor((text.length)/162))+1);
@@ -21,18 +25,18 @@ function AddBlogs() {
     }
 
     const addData = async () => {
-        
-        var fakeDatas = {
-            "id":'0',
-            "head":header,
-            "details":details
-        }
-        var pushingKey = await ref.push(fakeDatas).key;
-        ref.child(pushingKey).set({
-            "id":pushingKey,
-            "head":header,
-            "details":details
-        })
+
+            var fakeDatas = {
+                "id":'0',
+                "head":header,
+                "details":details
+            }
+            var pushingKey = ref.push(fakeDatas).key;
+            ref.child(pushingKey).set({
+                "id":pushingKey,
+                "head":header,
+                "details":details
+            })
     }
 
 
@@ -48,7 +52,7 @@ function AddBlogs() {
                 <textarea className="form-control" onChange={e => checkRow(e.target.value)} id="exampleFormControlTextarea1" rows={row}></textarea>
             </div>
 
-            <button className="btn btn-primary " onClick={addData}>Add Blog</button>
+            <button className="btn btn-primary " onClick={addData}>Blog Ekle</button>
             </form>
         </div>
     )

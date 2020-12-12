@@ -28,7 +28,13 @@ function Header() {
   return (
       <>
     <nav className="navbar navbar-dark bg-dark fixed-top">
-        <a className="navbar-brand" style={{'fontSize':25}}>Burak İmdat</a>
+        <a href="/" className="navbar-brand" style={{'fontSize':25}}>Burak İmdat</a>
+        <a href="https://github.com/burakJs">
+          <i class="fa fa-github" style={{'fontSize':50}}></i>
+          </a>
+        <a href="https://www.linkedin.com/in/burak-imdat-b87a391bb/">
+        <i class="fa fa-linkedin" style={{'fontSize':50}}></i>
+          </a>
         
                 <form className="form-inline">
                 <Link to="/">

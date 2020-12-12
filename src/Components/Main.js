@@ -9,7 +9,6 @@ import '../App.css';
 import EducationPNG from '../Assets/education.png';
 import EventsPNG from '../Assets/events.png';
 import LanguagesPNG from '../Assets/languages.jpeg';
-import GithubPNG from '../Assets/github.png';
 import ProjectsPNG from '../Assets/projects.png';
 
 function Main() {
@@ -71,14 +70,14 @@ function Main() {
                                 - Yükleniyor... -
                                 <br/>
                                 <a href="https://github.com/burakJs/cvsite">
-                                    <img src={GithubPNG} style={{'width':30,'height':30}}/>
+                                <i class="fa fa-github" style={{'fontSize':35,'color':'black'}}></i>
                                     </a>
                             </li>
                             <li className="list-group-item"> 
                             BlogB <br/> 
                             - Yükleniyor... -<br/>
                             <a href="https://github.com/burakJs/cvsite">
-                                <img src={GithubPNG} style={{'width':30,'height':30}}/>
+                            <i class="fa fa-github" style={{'fontSize':35,'color':'black'}}></i>
                             </a>
                             </li>
                         </ul>
