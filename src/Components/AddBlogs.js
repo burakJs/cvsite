@@ -20,13 +20,19 @@ function AddBlogs() {
         setRow((Math.floor((text.length)/100))+1)
     }
 
-    const addData = () => {
+    const addData = async () => {
+        
         var fakeDatas = {
+            "id":'0',
             "head":header,
             "details":details
         }
-        
-        ref.push(fakeDatas);
+        var pushingKey = await ref.push(fakeDatas).key;
+        ref.child(pushingKey).set({
+            "id":pushingKey,
+            "head":header,
+            "details":details
+        })
     }
 
 
