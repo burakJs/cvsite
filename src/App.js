@@ -8,6 +8,9 @@ import {
 
 import Header from './Components/Header';
 import Main from './Components/Main';
+import Blogs from './Components/Blogs';
+import Login from './Components/Login';
+import AddBlogs from './Components/AddBlogs';
 
 
 function App() {
@@ -18,7 +21,9 @@ function App() {
         <Switch>
           
           <Route path="/" exact component={Main}/>
-
+          <Route path="/blogs" exact component={Blogs}/>
+          <Route path="/admin" exact component={Login}/>
+          <Route path="/addblogs" exact component={AddBlogs}/>
         </Switch>
     </Router>
   );
