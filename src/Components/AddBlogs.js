@@ -12,11 +12,9 @@ function AddBlogs() {
     var [header,setHeader] = useState("");
     var [details,setDetails] = useState("");
     //const [datas,setDatas] = useState([]);
-    var ref = firebase.database().ref('blogs');
+    const [isSign,setIsSign] = useState(false)
 
-    function timeout(delay) {
-        return new Promise( res => setTimeout(res, delay) );
-    }
+    var ref = firebase.database().ref('blogs');
 
     const checkRow = (text) =>{
         setDetails(text);
@@ -24,6 +22,14 @@ function AddBlogs() {
         setRow((Math.floor((text.length)/100))+1)
     }
 
+  firebase.auth().onAuthStateChanged(function(user) {
+    if (user) {
+      setIsSign(true)
+    } else {
+
+    }
+  });
+  
     const addData = async () => {
 
             var fakeDatas = {
@@ -42,6 +48,8 @@ function AddBlogs() {
 
     return(
         <div className="container">
+            {isSign ? 
+            (
             <form>
             <div className="form-group">
                 <label >Blog Başlığı</label>
@@ -54,6 +62,12 @@ function AddBlogs() {
 
             <button className="btn btn-primary " onClick={addData}>Blog Ekle</button>
             </form>
+            ):
+            (
+                <div class="alert alert-danger " role="alert">
+                    <h1>Lütfen Giriş Yapınız</h1>
+                </div>
+            )}
         </div>
     )
 }
