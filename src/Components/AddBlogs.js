@@ -64,18 +64,18 @@ function AddBlogs() {
             {isSign ? 
             (
             <form>
-            <div className="form-group">
-                <label >Blog Başlığı</label>
-                <input type="text" onChange={e => setHeader(e.target.value)} className="form-control" />
+            <div className="form-group m-5">
+                <h3 >Blog Başlığı</h3>
+                <input type="text" onChange={e => setHeader(e.target.value)} className="form-control m-2" />
                 <input type="color" onChange={e => setHeadColor(e.target.value)}></input>
             </div>
-            <div className="form-group">
-                <label >Blog Detayı</label>
-                <textarea className="form-control" onChange={e => checkRow(e.target.value)} id="exampleFormControlTextarea1" rows={row}></textarea>
+            <div className="form-group m-3">
+                <h3 >Blog Detayı</h3>
+                <textarea className="form-control m-2" onChange={e => checkRow(e.target.value)} rows={row}></textarea>
                 <input type="color" onChange={e => setDetailsColor(e.target.value)}></input>
             </div>
 
-            <button className="btn btn-primary " onClick={addData}>Blog Ekle</button>
+            <button className="btn btn-primary" onClick={addData}>Blog Ekle</button>
             </form>
             ):
             (
