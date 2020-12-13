@@ -32,19 +32,22 @@ function AddBlogs() {
   
     const addData =  () => {
 
+            var date = new Date();
+
             var fakeDatas = {
                 "id":'0',
                 "head":header,
-                "details":details
+                "details":details,
+                "date":date.toLocaleDateString()
             }
 
             var pushingKey = ref.push(fakeDatas).key;
-            alert(pushingKey);
             
             ref.child(pushingKey).set({
                 "id":pushingKey,
                 "head":header,
-                "details":details
+                "details":details,
+                "date":date.toLocaleDateString()
             })
     }
 

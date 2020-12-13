@@ -40,16 +40,17 @@ function Blogs() {
 
   return (
     <>
-        <div className='container'>
+        <div className='container w-50'>
           
           {datas ? datas.map((data,key)=>{
             return(
               <>
-              <div key={key}>
+              <div className='container w-50 ' key={key}>
                 <h1>{data.head}</h1>
                 {isSign ?
                  (<button className="btn btn-danger" onClick={()=>deleteBlog(data)}>Sil</button>):(<></>)}
                 <p>{data.details}</p>
+                <p style={{'textAlign':'right','color':'gray'}}>{data.date}</p>
               </div>
               <br/><br/>
               </>
