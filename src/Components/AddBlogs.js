@@ -30,14 +30,17 @@ function AddBlogs() {
     }
   });
   
-    const addData = async () => {
+    const addData =  () => {
 
             var fakeDatas = {
                 "id":'0',
                 "head":header,
                 "details":details
             }
+
             var pushingKey = ref.push(fakeDatas).key;
+            alert(pushingKey);
+            
             ref.child(pushingKey).set({
                 "id":pushingKey,
                 "head":header,
