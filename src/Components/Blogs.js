@@ -40,16 +40,16 @@ function Blogs() {
 
   return (
     <>
-        <div className='container w-50'>
+        <div className='container'>
           
           {datas ? datas.map((data,key)=>{
             return(
               <>
-              <div className='container w-50 ' key={key}>
+              <div className='container w-75 ' key={key}>
                 <h1 style={{'color':data.headColor}}><b>{data.head}</b></h1>
                 {isSign ?
                  (<button className="btn btn-danger" onClick={()=>deleteBlog(data)}>Sil</button>):(<></>)}
-                <p style={{'color':data.detailsColor}} ><b>{data.details}</b></p>
+                <h5 style={{'color':data.detailsColor}} ><b>{data.details}</b></h5>
                 <p style={{'textAlign':'right','color':'gray'}}>{data.date}</p>
               </div>
               <br/><br/>
