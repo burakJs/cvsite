@@ -11,6 +11,9 @@ function AddBlogs() {
     const [row,setRow] = useState(1);
     var [header,setHeader] = useState("");
     var [details,setDetails] = useState("");
+    var [headColor,setHeadColor] = useState("");
+    var [detailsColor,setDetailsColor] = useState("");
+
     //const [datas,setDatas] = useState([]);
     const [isSign,setIsSign] = useState(false)
 
@@ -38,7 +41,9 @@ function AddBlogs() {
                 "id":'0',
                 "head":header,
                 "details":details,
-                "date":date.toLocaleDateString()
+                "date":date.toLocaleDateString(),
+                "headColor":headColor,
+                "detailsColor":detailsColor
             }
 
             var pushingKey = ref.push(fakeDatas).key;
@@ -47,7 +52,9 @@ function AddBlogs() {
                 "id":pushingKey,
                 "head":header,
                 "details":details,
-                "date":date.toLocaleDateString()
+                "date":date.toLocaleDateString(),
+                "headColor":headColor,
+                "detailsColor":detailsColor
             })
     }
 
@@ -60,10 +67,12 @@ function AddBlogs() {
             <div className="form-group">
                 <label >Blog Başlığı</label>
                 <input type="text" onChange={e => setHeader(e.target.value)} className="form-control" />
-                </div>
+                <input type="color" onChange={e => setHeadColor(e.target.value)}></input>
+            </div>
             <div className="form-group">
                 <label >Blog Detayı</label>
                 <textarea className="form-control" onChange={e => checkRow(e.target.value)} id="exampleFormControlTextarea1" rows={row}></textarea>
+                <input type="color" onChange={e => setDetailsColor(e.target.value)}></input>
             </div>
 
             <button className="btn btn-primary " onClick={addData}>Blog Ekle</button>
